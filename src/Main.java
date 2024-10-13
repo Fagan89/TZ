@@ -133,22 +133,11 @@ public class Main {
     public static String delta(String one, String three) { // Операция вычитания
         String one2 = one.replace("\"", "");
         String three2 = three.replace("\"", "");
-        String[] oneArray = one2.split(" ");
-        String[] threeArray = three2.split(" ");
-        int a = 0;
-        for (int i = 1; i <= threeArray.length; i++) {
-            if (threeArray[threeArray.length - i].equals(oneArray[oneArray.length - i])) {
-                a++;
-            }
-        }
         String rez = new String("");
-        if (a == threeArray.length) {
-            for (int i = 0; i < (oneArray.length - threeArray.length); i++) {
-                rez = rez + oneArray[i];
-            }
+        if (one2.contains(three2)){
+           rez = one2.replace(three2,"");
         } else {
-            rez = one2;
-        }
+            rez = one2;}
         return rez;
     }
 }
